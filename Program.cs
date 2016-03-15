@@ -110,8 +110,7 @@ namespace BlackJack
 
             if (sumPlayer > sumComputer)
             {
-                Console.WriteLine("You Won!!!");
-                Console.WriteLine(sumPlayer + " - " +  sumComputer);
+                Console.WriteLine("You Won!!!");                
                 aggregatePlayer++;
                 StartNewRound();
 
@@ -119,16 +118,14 @@ namespace BlackJack
             
             else if (sumPlayer < sumComputer)
             {
-                Console.WriteLine("Computer Won.");
-                Console.WriteLine(sumPlayer + " - " + sumComputer);
+                Console.WriteLine("Computer Won.");                
                 aggregateComputer++;
                 StartNewRound();
             }
 
             else
             {
-                Console.WriteLine("Draw.");
-                Console.WriteLine(sumPlayer + " - " + sumComputer);
+                Console.WriteLine("Draw.");                
                 StartNewRound();
             }
 
@@ -145,7 +142,7 @@ namespace BlackJack
             }
             if (sumPlayer > 21)
             {
-                Console.WriteLine("You lose. - {0}", sumPlayer);
+                Console.WriteLine("You lose.");
                 aggregateComputer++;
                 StartNewRound();
             }
