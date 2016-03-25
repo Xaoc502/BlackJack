@@ -13,7 +13,6 @@ namespace BlackJack2
 
         static void Main(string[] args)
         {
-
             Console.ForegroundColor = ConsoleColor.Green;
                         
             Player player = new Player();
@@ -21,10 +20,8 @@ namespace BlackJack2
                         
             for (;;)
             {
-
                 if (!started)
                 {
-
                     Console.WriteLine();
                     Console.WriteLine("* To shuffle the deck type - shuffle");
                     Console.WriteLine("* To show the deck type - show");
@@ -49,7 +46,6 @@ namespace BlackJack2
                 }
                 else
                 {
-
                     Console.WriteLine("* To take another card type - hit");
                     Console.WriteLine("* To take no more cards type - stand");
                     string command = Console.ReadLine();
@@ -71,7 +67,6 @@ namespace BlackJack2
          }
     }
     
-
     public class Deck
     {
         //********************************** Shuffle the deck *****************************
@@ -141,7 +136,6 @@ namespace BlackJack2
         public int sumPlayer = 0;
         public List<KeyValuePair<string, int>> Start(List<KeyValuePair<string, int>> deck)
         {
-            
             for (int i = 0; i < 2; i++)
             {
                 Console.Write(deck[0].Key + " ");
@@ -161,21 +155,16 @@ namespace BlackJack2
 
         public void Hit(List<KeyValuePair<string, int>> deck)
         {
-            
             Console.WriteLine(deck[0].Key);
-           
-                sumPlayer += deck[0].Value;
-                deck.Remove(deck[0]);
+            sumPlayer += deck[0].Value;
+            deck.Remove(deck[0]);
 
             if (sumPlayer > 21)
             {
                 Console.WriteLine("You lose.");
                 Program.aggregateComputer ++;
-                
             }
-
         }
-
     }
 
     public class Dealer
@@ -183,14 +172,12 @@ namespace BlackJack2
         public int sumComputer = 0;
         public void TakeCards(List<KeyValuePair<string, int>> deck)
         {
-           
             for (int i = 0; i < 2; i++)
             {
                 Console.WriteLine(deck[0].Key);
                 sumComputer += deck[0].Value;
                 deck.Remove(deck[0]);
             }
-                        
         }
     }
 
@@ -203,16 +190,13 @@ namespace BlackJack2
                 Console.WriteLine("You Won!!!");
                 Program.aggregatePlayer++;
                 new Clear().StartNewRound();
-
             }
-
             else if (sumPlayer < sumComputer)
             {
                 Console.WriteLine("Computer Won.");
                 Program.aggregateComputer++;
                 new Clear().StartNewRound();
             }
-
             else
             {
                 Console.WriteLine("Draw.");
@@ -225,12 +209,10 @@ namespace BlackJack2
     {
         public void StartNewRound()
         {
-            
             Console.WriteLine();
             Console.WriteLine("Press any key for starting the new round.");
             Console.ReadKey();
             Program.started = false;
-            
             Console.Clear();
             Program.deck = Program.newDeck.CreateTheDeck();
             Console.WriteLine("TOTAL SCORE - Player {0} : {1} Computer", Program.aggregatePlayer, Program.aggregateComputer);
