@@ -10,22 +10,7 @@ namespace BlackJack3
     {      
         static void Main(string[] args)
         {
-            //GameConsole gameConsole = new GameConsole();
             GameConsole.StartGame();
-            //console.ShowTheDeck(deck);
-            //Console.WriteLine();
-            //Console.WriteLine();
-            //deck.ShuffleTheDeck();
-            //Console.WriteLine(); Console.WriteLine();
-            //console.ShowTheDeck(deck);
-            Console.ReadKey();
-                        
-           
-            GameRules rules = new GameRules();
-
-            
-            Console.ReadKey();
-            
         }
     }
 }
